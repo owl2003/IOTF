@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui import QTextCursor
 from PyQt5.QtCore import  pyqtSlot
 import paho.mqtt.client as mqtt
-from backend.config import MQTT_BROKER, MQTT_PORT, CA_CERT_PATH
+from IOTF.backend.config import MQTT_BROKER, MQTT_PORT, CA_CERT_PATH
 
 
 class MQTTDashboard(QMainWindow):
