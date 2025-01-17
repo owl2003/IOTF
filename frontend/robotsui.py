@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import (QApplication,QWidget,QVBoxLayout,QHBoxLayout,QLabel,QLineEdit,QPushButton,QPlainTextEdit,QSpinBox,QTabWidget,)
 from PyQt5.QtCore import pyqtSignal
 
-from backend.robots._robots import RobotC, RobotA
+from IOTF.backend.robots._robots import RobotC, RobotA
 
 class RobotControl(QWidget):
     message_received = pyqtSignal(str, str)  # Signal for thread-safe GUI updates
