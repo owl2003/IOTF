@@ -1,6 +1,6 @@
 import paho.mqtt.client as mqtt
 import logging
-from backend.config import MQTT_BROKER,MQTT_PORT,CA_CERT_PATH
+from IOTF.backend.config import MQTT_BROKER,MQTT_PORT,CA_CERT_PATH
 import ssl
 
 logging.basicConfig(level=logging.INFO)
