@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robot War Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/mqtt/dist/mqtt.min.js"></script>
+  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<center><div id="login-form">
+
+
+
+    <h2>Login to MQTT</h2>
+    <form id="login">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+      <br />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+      <br />
+        <label for="id">UserID:</label>
+      <input type="text" id="id" name="id" required />
+      <br />
+      <button type="submit">Login</button>
+    </form>
+  </div></center>
+  <div class="robot-container">
+
+    <div>
+
+        <div class="card">
+          <div class="wrapper">
+            <img src="assets/rifler.jpg" class="cover-image" />
+          </div>
+          <img src="assets/rifle.png" class="title" />
+          <img src="assets/riflec.png" class="character" />
+        </div>
+
+       <center><h1>Rifle 2</h1></center>
+
+      <div id="controlsR2" class="controls">
+               <div>
+        Sensor Topic: <input type="text" id="sensor-topic-rifle2">
+        <button id="save-sensor-rifle2" data-robot="rifle2" data-topic-type="sensor">Save</button>
+      </div>
+      <div>
+        Action Topic: <input type="text" id="action-topic-rifle2">
+        <button id="save-action-rifle2" data-robot="rifle2" data-topic-type="action">Save</button>
+      </div>
+             <div>
+        Status Topic: <input type="text" id="status-topic-rifle2" placeholder="rifle+id/status">
+        <button id="save-status-rifle2" data-robot="rifle2" data-topic-type="status">Save</button>
+          </div>
+        <div id="damage-rifle2" class="log">Damage: </div>
+                <div id="action-rifle2" class="log">action: </div>
+          <div id="status-rifle2" class="log">Status: </div>
+      </div>
+    </div>
+
+    <div>
+
+        <div class="card">
+          <div class="wrapper">
+            <img src="assets/bomberr.jpg" class="cover-image" />
+          </div>
+          <img src="assets/bombert.png" class="title" />
+          <img src="assets/bomber.png" class="character" />
+        </div>
+       <center><h1>Bomber 3</h1></center>
+
+      <div id="controls" class="controls">
+      <div>
+        Sensor Topic: <input type="text" id="sensor-topic-bomber3">
+        <button id="save-sensor-bomber3" data-robot="bomber3" data-topic-type="sensor">Save</button>
+      </div>
+      <div>
+        Action Topic: <input type="text" id="action-topic-bomber3">
+        <button id="save-action-bomber3" data-robot="bomber3" data-topic-type="action">Save</button>
+      </div>
+
+            <div>
+        Status Topic: <input type="text" id="status-topic-bomber3" placeholder="bomber+id/status">
+        <button id="save-status-bomber3" data-robot="bomber3" data-topic-type="status">Save</button>
+          </div>
+
+        <div id="temperature-bomber" class="log">Temperature: </div>
+                <div id="action-bomber" class="log">action: </div>
+                <div id="status-bomber3" class="log">Status: </div>
+
+      </div>
+    </div>
+
+    <div>
+
+        <div class="card">
+          <div class="wrapper">
+            <img src="assets/rifler.jpg" class="cover-image" />
+          </div>
+          <img src="assets/rifle.png" class="title" />
+          <img src="assets/riflec.png" class="character" />
+        </div>
+       <center><h1>Rifle 1</h1></center>
+
+      <div id="controlsR1" class="controls">
+      <div>
+        Sensor Topic: <input type="text" id="sensor-topic-rifle1">
+        <button id="save-sensor-rifle1" data-robot="rifle1" data-topic-type="sensor">Save</button>
+      </div>
+      <div>
+        Action Topic: <input type="text" id="action-topic-rifle1">
+        <button id="save-action-rifle1" data-robot="rifle1" data-topic-type="action">Save</button>
+          </div>
+          <div>
+        Status Topic: <input type="text" id="status-topic-rifle1" placeholder="rifle+id/status">
+        <button id="save-status-rifle1" data-robot="rifle1" data-topic-type="status">Save</button>
+          </div>
+        <div id="damage-rifle1" class="log">Damage: </div>
+                <div id="action-rifle1" class="log">action: </div>
+          <div id="status-rifle1" class="log">Status: </div>
+
+      </div>
+    </div>
+  </div>
+
+<center>
+<div id="robot-container" style="display: none;">
+    <h3>Global MQTT Management</h3>
+
+    <div>
+      <label for="subscribe">Topic to Subscribe:</label>
+      <input type="text" id="subscribe" placeholder="Enter topic" />
+      <button id="subscribe-topic">Subscribe</button>
+    </div>
+
+    <div>
+      <label for="topic">Topic to Publish:</label>
+      <input type="text" id="topic" placeholder="Enter topic" />
+      <label for="message">Message:</label>
+      <input type="text" id="message" placeholder="Enter message" />
+      <label for="qos">QoS:</label>
+      <select id="qos">
+        <option value="0">QoS 0</option>
+        <option value="1">QoS 1</option>
+        <option value="2">QoS 2</option>
+      </select>
+      <button id="send-message">Send Message</button>
+    </div>
+
+    <div>
+      <h4>Logs:</h4>
+      <textarea id="log-area" rows="10" cols="50" readonly></textarea>
+    </div>
+  </div>
+</center>
+</body>
+</html>
